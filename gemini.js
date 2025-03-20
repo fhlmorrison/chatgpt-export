@@ -5,6 +5,7 @@
     button.textContent = "Download Chat";
     button.classList.add(
       "download-button",
+      "mdc-button",
       "btn",
       "relative",
       "btn-secondary",
@@ -18,7 +19,7 @@
     // Wait for the button to appear before inserting the download button
     const waitForShareButton = setInterval(() => {
       const share_button = document.querySelector(
-        '[aria-label="Go to settings"]'
+        '[data-test-id="advanced-upsell-button"]'
       );
       if (share_button) {
         // share_button.parentElement.insertBefore(button, share_button);
@@ -64,9 +65,7 @@
 
     document.head.appendChild(style);
 
-    const chatContainer = document.querySelector(
-      '[aria-label="Chat messages"]'
-    );
+    const chatContainer = document.querySelector(".conversation-container");
 
     chatContainer.classList.add("chat-container");
 
